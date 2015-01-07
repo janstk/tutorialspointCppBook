@@ -27,7 +27,7 @@ C++提供了丰富的内置以及用户定义的数据类型。下面列出了�
 
 下表显示了变量类型，内存大小以及取值范围。
 
-<table class="src" border="1" cellpadding="5">
+<table>
 <tbody><tr><th>Type</th><th>Typical Bit Width</th><th>Typical Range</th></tr>
 <tr><td>char</td><td>1byte</td><td>-127 to 127 or 0 to 255</td></tr>
 <tr><td>unsigned char</td><td>1byte</td><td>0 to 255</td></tr>
