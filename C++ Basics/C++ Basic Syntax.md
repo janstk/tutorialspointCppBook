@@ -89,5 +89,36 @@ C++的标识符可用作命名（区分）变量，函数，结构，类，模�
     mohd       zara    abc   move_name  a_123
     myname50   _temp   j     a23b9      retVal
     
-    
+ ##C++的关键字##
+C++中的关键字不能用作标识符，下面是C++的关键字列表：
+
+    asm	else	new	this
+    auto	enum	operator	throw
+    bool	explicit	private	true
+    break	export	protected	try
+    case	extern	public	typedef
+    catch	false	register	typeid
+    char	float	reinterpret_cast	typename
+    class	for	return	union
+    const	friend	short	unsigned
+    const_cast	goto	signed	using
+    continue	if	sizeof	virtual
+    default	inline	static	void
+    delete	int	static_cast	volatile
+    do	long	struct	wchar_t
+    double	mutable	switch	while
+    dynamic_cast	namespace	template
+   
+##Trigraphs(三字母序列)##
+
+这段古老的历史就由下面这位讲讲吧：
+
+http://blog.sina.com.cn/s/blog_4b687eac01008ice.html
+
+##C++中的空格##
+
+仅包含空格，（制表符）的一行叫做“空行”。C++在编译时期会忽略这行代码（加了注释也没用）
+
+
+空白是C++用来描述空格，制表符，换行符和注释的术语。空格分隔从另一个声明的一部分，使编译器能够找出在一份声明中的一个元素，如int的结束和下一个元素开始。因此，在声明中，   
   [1]: http://www.tutorialspoint.com/cplusplus/try_cplusplus.php
