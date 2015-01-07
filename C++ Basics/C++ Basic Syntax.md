@@ -89,7 +89,8 @@ C++的标识符可用作命名（区分）变量，函数，结构，类，模�
     mohd       zara    abc   move_name  a_123
     myname50   _temp   j     a23b9      retVal
     
- ##C++的关键字##
+##C++的关键字##
+ 
 C++中的关键字不能用作标识符，下面是C++的关键字列表：
 
     asm	else	new	this
