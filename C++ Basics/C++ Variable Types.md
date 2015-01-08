@@ -37,12 +37,8 @@ C ++也允许定义各种其他类型的变量，像枚举，指针，数组，�
 
     type variable_list;
 
-
-Here, type must be a valid C++ data type including char, w_char, int, float, double, bool or any user-defined object, etc.,
-
 这里的”类型（type）“必须是一个有效的C++数据类型，包含字符，宽字符，整型，单精度和双精度、布尔值以及其他用户定义的类型等等。
 
-and variable_list may consist of one or more identifier names separated by commas. Some valid declarations are shown here
 
 变量列表（variable_list ）必须包含一个或多个变量的名称，用逗号分隔开。以下是一些例子：
 
@@ -72,6 +68,78 @@ and variable_list may consist of one or more identifier names separated by comma
 
 变量的声明就是告诉编译器又一个给定类型和名称的变量存在，编译器由此可进一步的编译程序而不细变量的详细信息和值。
 
-变量的声明只有在其编译时期才有意义，在编译器链接程序的时候需要实际的变量声明。
+变量的声明只有在其编译时期才有意义，在编译器链接程序的时候需要实际的变量声明。 
 
+在使用多个文件编译时，变量声明就显得有用了。在一个文件中声明了变量，其他文件在链接过程中也可以使用。
+
+你可以在任何地方使用“extern”关键字来声明一个变量。
+
+尽管可以多次在程序中声明变量，不过在一个文件中，一个函数中或一个代码中声明一次。
+##例子##
+
+尝试下面的程序，这段代码在上方声明了变量，却在下面的main函数中定义了变量。
+
+    #include <iostream>
+    using namespace std;
+    
+    // 变量声明:
+    extern int a, b;
+    extern int c;
+    extern float f;
+      
+    int main ()
+    {
+      // 变量的定义:
+      int a, b;
+      int c;
+      float f;
+     
+      // 初始化变量
+      a = 10;
+      b = 20;
+      c = a + b;
+     
+      cout << c << endl ;
+    
+      f = 70.0/3.0;
+      cout << f << endl ;
+     
+      return 0;
+    }
+
+代码跑起来之后，输出的结果是：
+
+    30
+    23.3333
+
+
+同样的概念也适用于函数的声明，可以在一个地方给出函数的声明，在其他任何地方给出函数的定义，例如：
+
+    // 函数声明
+    int func();
+    
+    int main()
+    {
+        // 函数调用
+        int i = func();
+    }
+    
+    // 函数定义
+    int func()
+    {
+        return 0;
+    }
+
+##左值和右值：##
+
+在C++中有两个表达式：
+ - 左值（lvalue ）：引用寄存器地址的的表达式称作”左值“。左值可以出现在赋值语句的左边或右边。
+ - 右值（rvalue):右值代表存储在内存中的一个值，右值表达式不能被赋值，即右值可以出现在赋值语句的右边而不是左边。
+
+变量是左值，所以只能出现在赋值语句的左侧。而数字是一个右值，所以它不能被赋值，出现在赋值语句的左侧。下面是一个有效的赋值语句：
+
+    int g = 20;
+   
+下面这个语句是错误的，编译器会在编译的时候生成一个”编译时错误“。
+    10 = 20;
 
